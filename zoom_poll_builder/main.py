@@ -2,9 +2,14 @@ import re
 
 
 def open_file(file_path: str) -> list[str]:
-    with open(file_path) as file:
-        data = file.read()
-    return data.strip().split("\n")
+    try:
+        with open(file_path) as file:
+            return file.read().strip().split("\n")
+    except FileNotFoundError:
+        print(f"Error: file '{file_path}' not found")
+    except Exception as e:
+        print(f"Error: {e}")
+    return None
 
 
 def extract_data(lines: list[str]) -> list:

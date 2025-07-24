@@ -10,4 +10,7 @@ wheels/
 .venv
 
 # Question files
-questions.txt
+questions*
+
+# Sensitive values
+.env

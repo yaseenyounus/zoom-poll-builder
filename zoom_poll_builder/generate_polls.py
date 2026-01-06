@@ -5,7 +5,7 @@ from auth import get_access_token
 from dotenv import load_dotenv
 from time import sleep
 
-from fiqh_of_fasting.intro_to_fasting import questions
+from questions.fiqh_of_fasting.intro_to_fasting import questions
 
 load_dotenv()
 

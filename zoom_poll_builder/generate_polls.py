@@ -3,8 +3,9 @@ import requests
 
 from auth import get_access_token
 from dotenv import load_dotenv
-from questions import questions_data
 from time import sleep
+
+from fiqh_of_fasting.intro_to_fasting import questions
 
 load_dotenv()
 
@@ -19,7 +20,7 @@ headers = {
     "Content-Type": "application/json",
 }
 
-for x in questions_data:
+for x in questions:
     payload = {
         "title": f"{x['name'][:50]}",
         "questions": [
@@ -39,4 +40,4 @@ for x in questions_data:
         print("Failed to create poll:")
         print(response.status_code, response.text)
 
-    sleep(0.5)
+    sleep(0.75)
